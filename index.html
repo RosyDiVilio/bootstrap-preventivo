@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--link boostrap-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <!--js boostrap-->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+     <title>Preventivo</title>
+  </head>
+
+ <body>
+     <header>
+         <!--menu-->
+         <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+             <div class="container justify-content-between">
+                 <div class="container">
+                     <a class="navbar-brand" href="#">Bool Factory</a>
+                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                         <span class="navbar-toggler-icon"></span>
+                     </button>
+                  </div>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     <div class="container-fluid">
+                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                             <li class="nav-item">
+                                 <a class="nav-link" href="#">Home</a>
+                             </li>
+                             <li class="nav-item">
+                                 <a class="nav-link" href="#">Servizi</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="#">Contatti</a>
+                             </li>
+                         </ul>    
+                     </div>
+                 </div>
+              </div>
+         </nav>
+     </header>
+
+     <main class="container">
+         <!--intestazione-->
+         <div class="row">
+             <div class="col-lg-9 col-sm-12 py-4">
+                 <h2>Richiesta Preventivo</h2>
+                 <div class="mb-4">Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</div>
+             
+                 <!--Inizio inserimento dati utente-->
+                 <form class="row g-3">
+                     <div class="col-md-12">
+                         <label for="nome" class="form-label">Nome</label>
+                         <input type="text" class="form-control" id="nome">
+                     </div>
+                     <div class="col-md-12">
+                         <label for="cognome" class="form-label">Cognome</label>
+                         <input type="text" class="form-control" id="cognome">
+                     </div>
+                     <div class="col-12">
+                         <label for="email" class="form-label">Email</label>
+                         <input type="text" class="form-control" id="email">
+                     </div>
+                     
+                     <div class="col-md-12">
+                         <label for="inputState" class="form-label">Tipo di lavoro</label>
+                         <select id="inputState" class="form-select">
+                             <option selected>Scegli...</option>
+                             <option>BackEnd Development</option>
+                             <option>FrontEnd Development</option>
+                             <option>Project Analysis</option>
+                         </select>
+                      </div>
+                      <div>
+                         <label for="exampleFormControlTextarea1" class="form-label">Textarea con Boostrap 5</label>
+                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                     <div class="col-md-12">
+                         <label for="codice" class="form-label">Codice Promozionale (opzionale)</label>
+                         <input type="text" class="form-control" id="codice">
+                     </div>
+                     <div class="col-12 mb-4">
+                         <div class="form-check">
+                             <input class="form-check-input" type="checkbox" id="gridCheck">
+                             <label class="form-check-label" for="gridCheck">Accetto la privacy policy</label>
+                          </div>
+                      </div>
+                      <div class="col-6 text-center">
+                         <button type="submit" class="btn btn-primary">Calcola preventivo</button>
+                      </div>
+                     <div class="col-6 text-center d-none">Prezzo Finale</div>
+                 </form>
+              </div>
+              
+              <!--card con info contatti-->
+              <div class="col-lg-3 col-sm-12 py-4">
+                 <div class="card" style="width: 18rem;">
+                     <img src="immagine.png" class="card-img-top" alt="immagine random">
+                     <div class="card-body">
+                         <h5 class="card-title">I nostri contatti</h5>
+                         <p class="card-text">Se hai bisogno di aiuto puoi contattarci:</p>
+                     </div>
+                     <ul class="list-group list-group-flush">
+                         <li class="list-group-item">help@boolfactory.test</li>
+                         <li class="list-group-item">+1122334455</li>
+                     </ul>
+                     <div class="card-body">
+                         <a href="#" class="card-link">Help desk</a>
+                     </div>
+                 </div>
+              </div>
+           </div>
+     </main>
+
+     <footer></footer>
+
+     <script src="js/main.js"></script>
+ </body>
+</html>
