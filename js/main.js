@@ -17,7 +17,6 @@ const userBack = 'BackEnd Development';
 const userFront = 'FrontEnd Development';
 const userAnalysis = 'Project Analysis';
 const sale = 25;
-const saleNames = ['YHDNU32','JANJC63','PWKCN25','SJDPO96','POCIE24'];
 
 let price = 0;
 
@@ -40,11 +39,13 @@ calc.addEventListener('submit', function (event) {
    let calcSale = (price * 25) / 100;
    let discoutPrice = (price - calcSale); 
 
-   saleNames.forEach(function (element) {
+   const saleNames = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
+
+   saleNames.forEach(function(element) {
       if (code.value === element) {
          finalPrice.innerText = `€ ${discoutPrice.toFixed(2)}`;
-      } else if (code.value !== element) {
-         finalPrice.innerText = `€ ${price.toFixed(2)} Il codice non è valido`;
+      } else if (!code.value === element) {
+         finalPrice.innerText = `€ ${price.toFixed(2)}`;
       }
-   }) 
+   })
 })
