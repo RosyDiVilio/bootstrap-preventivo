@@ -7,6 +7,7 @@ let select = document.getElementById('job');
 select = job.value;
 let codeNames = document.getElementById('code');
 codeNames = code.value;
+document.getElementById('warning');
 
 //dichiarazione variabili
 const projectHours = 10;
@@ -34,6 +35,7 @@ calc.addEventListener('submit', function (event) {
 
    finalPriceContainer.classList.remove('d-none');
    finalPrice.innerText = `€ ${price.toFixed(2)}`;
+   
 
    //calcolo sconto
    let calcSale = (price * 25) / 100;
@@ -42,10 +44,24 @@ calc.addEventListener('submit', function (event) {
    const saleNames = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 
    saleNames.forEach(function(element) {
+
       if (code.value === element) {
-         finalPrice.innerText = `€ ${discoutPrice.toFixed(2)}`;
+      finalPrice.innerText = `€ ${discoutPrice.toFixed(2)}`;
       } else if (!code.value === element) {
-         finalPrice.innerText = `€ ${price.toFixed(2)}`;
-      }
-   })
+      finalPrice.innerText = `€ ${price.toFixed(2)}` ; 
+    } else if (code.value === "") {
+      finalPrice.innerText = `€ ${price.toFixed(2)}`;
+    }
+
+   })  
+   
+   //validazione codice
+   if (saleNames.includes(code.value) || code.value === "") {
+      code.classList.add('is-valid');
+      code.classList.remove('is-invalid');
+   } else if (!saleNames.includes(code.value)) {
+      code.classList.add('is-invalid');
+      code.classList.remove('is-valid');
+   }
+
 })

@@ -56,7 +56,7 @@
                  <div class="mb-4">Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</div>
              
                  <!--Inizio inserimento dati utente-->
-                 <form class="row g-3" id="calculator" required>
+                 <form class="row g-3" id="calculator">
                      <div class="col-md-12">
                          <label for="name" class="form-label">Nome</label>
                          <input type="text" class="form-control" id="name" required>
@@ -86,7 +86,6 @@
                      <div class="col-md-12">
                          <label for="code" class="form-label">Codice Promozionale (opzionale)</label>
                          <input type="text" class="form-control" id="code">
-                         <span id="wrongCode"></span>
                      </div>
                      <div class="col-12 mb-4">
                          <div class="form-check">
@@ -98,7 +97,7 @@
                          <button type="submit" class="btn btn-primary">Calcola preventivo</button>
                       </div>
                       <div class="col-lg-6 col-sm-12 text-center d-none fs-5 fw-bold" id="finalPrice-container">Prezzo Finale
-                         <div class="fs-4" id="finalPrice">&euro; <div class="finalPriceColor text-secondary"></div></div>
+                         <div class="fs-4" id="finalPrice">&euro;</div>
                       </div>
                  </form>
               </div>
