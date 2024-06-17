@@ -7,7 +7,6 @@ let select = document.getElementById('job');
 select = job.value;
 let codeNames = document.getElementById('code');
 codeNames = code.value;
-document.getElementById('warning');
 
 //dichiarazione variabili
 const projectHours = 10;
@@ -34,24 +33,37 @@ calc.addEventListener('submit', function (event) {
       }
 
    finalPriceContainer.classList.remove('d-none');
-   finalPrice.innerText = `€ ${price.toFixed(2)}`;
    
-
    //calcolo sconto
    let calcSale = (price * 25) / 100;
-   let discoutPrice = (price - calcSale); 
+   let discountPrice = (price - calcSale); 
 
    const saleNames = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 
    saleNames.forEach(function(element) {
 
-      if (code.value === element) {
-      finalPrice.innerText = `€ ${discoutPrice.toFixed(2)}`;
-      } else if (!code.value === element) {
-      finalPrice.innerText = `€ ${price.toFixed(2)}` ; 
-    } else if (code.value === "") {
-      finalPrice.innerText = `€ ${price.toFixed(2)}`;
-    }
+      //calcolo sconto e colore prezzo finale
+      let priceString = price.toFixed(2);
+      let priceStringTwo = discountPrice.toFixed(2);
+      let divide = 0;
+      let divideTwo = 0;
+      divide = priceString.split('.');
+      divideTwo = priceStringTwo.split('.');
+      let integer = divide[0];
+      let decimal = divide[1];
+      let integerTwo = divideTwo[0];
+      let decimalTwo = divideTwo[1];
+
+      if (saleNames.includes(code.value)) {
+         finalPrice.innerText = `€ ${integerTwo}`;
+         secondNumber.innerText = `,${decimalTwo}`;
+      } else if (!saleNames.includes(code.value)) {
+         finalPrice.innerText = `€ ${integer}`; 
+         secondNumber.innerText = `,${decimal}`;
+      } else if (code.value === "") {
+         finalPrice.innerText = `€ ${integer}`;
+         secondNumber.innerText = `,${decimal}`;
+      }
 
    })  
    
@@ -62,6 +74,6 @@ calc.addEventListener('submit', function (event) {
    } else if (!saleNames.includes(code.value)) {
       code.classList.add('is-invalid');
       code.classList.remove('is-valid');
-   }
+   } 
 
 })
